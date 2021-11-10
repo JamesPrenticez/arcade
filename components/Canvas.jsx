@@ -63,8 +63,8 @@ const Canvas = props => {
         })
         
         canvas.addEventListener("mousemove", (e) => {
-            console.log(e.clientX)
-            console.log(e.clientY)
+            //console.log(e.clientX)
+            //console.log(e.clientY)
         })
 
         const draw = () =>{
@@ -81,12 +81,8 @@ const Canvas = props => {
       window.cancelAnimationFrame(animationFrameId)
     }
   }, [])
-
-
   
-  return (
-        <canvas tabIndex={0} className="bg-green-700" ref={canvasRef} {...props}/>
-    )
+  return <canvas tabIndex={0} className="bg-green-700" ref={canvasRef} {...props}/>
 }
 
 export default Canvas
