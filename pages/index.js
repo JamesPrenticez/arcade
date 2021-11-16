@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react'
+import RPG from '../components/RPG/RPG'
 import BBall from '../components/BBall'
 import Flappy from '../components/Flappy'
 import Home from '../components/Home'
@@ -11,10 +12,12 @@ import Ski from '../components/Ski'
 import Snake from '../components/Snake'
 import Tetris from '../components/Tetris'
 
-const pages = ["Home", "Shooter", "Snake", "Tetris", "Ski", "BBall", "Racer", "Miner", "Flappy", "Hook"]
+const pages = ["RPG", "Shooter", "Snake", "Tetris", "Ski", "BBall", "Racer", "Miner", "Flappy", "Hook"]
 
 export default function Index() {
   const [page, setPage] = useState("Home")
+  const length = JSON.stringify(pages.length)
+  console.log(length)
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -26,12 +29,15 @@ export default function Index() {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center md:max-w-3xl xl:max-w-6xl">
         <h1 className="text-6xl font-bold mb-5">
           Welcome to the{' '}
-          <p className="text-blue-600">
-            Arcade!
-          </p>
+          <a 
+            onClick={() => setPage("Home")}
+            className="text-gradient-to-r from-green-400 to-blue-500 hover:cursor-pointer"
+          >
+              Arcade!
+          </a>
         </h1>
 
-      <div className={`h-10 bg-gray-100 grid grid-cols-${JSON.stringify(pages.length)}`}>
+      <div className="h-10 bg-gray-100 grid grid-cols-10">
         {pages.map((page, index) => {
           return (
             <button
@@ -44,10 +50,12 @@ export default function Index() {
           )
         })}
       </div>
+      </main>
 
       {/*Render Components Based on State*/}
       {
         page === "Home" ? (<Home />) :
+        page === "RPG" ? (<RPG />) :
         page === "Shooter" ? (<Shooter />) :
         page === "Snake" ? <Snake /> :
         page === "Tetris" ? <Tetris /> :
@@ -60,7 +68,6 @@ export default function Index() {
         "Home"
         }
        
-      </main>
 
       <footer className="flex items-center justify-center w-full h-24 border-t">
         Built by James Prentice
