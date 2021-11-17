@@ -1,41 +1,21 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
+import Canvas from './Canvas/Canvas'
 
-const Fish = props => {
-
-    const canvasRef = useRef(null)
-
-    useEffect(() => {
-        const canvas = canvasRef.current
-        canvas.height = 500
-        canvas.width = 500
-        const ctx = canvas.getContext('2d')
-        let frameCount = 0
-        let animationFrameId
+function Fish(){
+    const draw = (context, frameCount) => {
+        context.clearRect(0, 0, context.canvas.width, context.canvas.height)
         
-        const draw = () =>{
-            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-            ctx.fillStyle = 'yellow'
-            ctx.beginPath()
-            ctx.arc(250, 250, 20, 0, 2*Math.PI)
-            ctx.fill()
-        }
-        const render = () => {
-            draw()
-            frameCount++
-            animationFrameId = window.requestAnimationFrame(render)
-        }
-        render()
-    
-    return () => {
-      window.cancelAnimationFrame(animationFrameId)
-    }
-  }, [])
-    return (
-        <>
-        <h1 className="font-semibold text-5xl p-4 text-indigo-600">Fish</h1>
-        <canvas tabIndex={0} className="bg-green-600" ref={canvasRef} {...props}/>
-        </>
-    )
-}
+        //bg
+        context.fillStyle = "blue";
+        context.fillRect(0, 0, 500, 500);
 
+
+        context.fillStyle = 'yellow'
+        context.beginPath()
+        context.arc(250, 250, 20, 0, 2*Math.PI)
+        context.fill()
+    }
+      
+      return <Canvas draw={draw} />
+    }
 export default Fish

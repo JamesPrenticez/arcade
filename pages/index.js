@@ -4,7 +4,7 @@ import RPG from '../components/RPG/RPG'
 import BBall from '../components/BBall'
 import Flappy from '../components/Flappy'
 import Home from '../components/Home'
-import Hook from '../components/Hook'
+import Fish from '../components/Fish'
 import Miner from '../components/Miner'
 import Racer from '../components/Racer'
 import Shooter from '../components/Shooter'
@@ -12,7 +12,7 @@ import Ski from '../components/Ski'
 import Snake from '../components/Snake'
 import Tetris from '../components/Tetris'
 
-const pages = ["RPG", "Shooter", "Snake", "Tetris", "Ski", "BBall", "Racer", "Miner", "Flappy", "Hook"]
+const pages = ["RPG", "Shooter", "Snake", "Tetris", "Ski", "BBall", "Racer", "Miner", "Flappy", "Fish"]
 
 export default function Index() {
   const [page, setPage] = useState("Home")
@@ -64,7 +64,7 @@ export default function Index() {
         page === "Racer" ? <Racer /> :
         page === "Miner" ? <Miner /> :
         page === "Flappy" ? <Flappy /> :
-        page === "Hook" ? <Hook /> :
+        page === "Fish" ? <Fish /> :
         "Home"
         }
        
