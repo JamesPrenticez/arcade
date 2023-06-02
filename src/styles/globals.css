@@ -22,7 +22,12 @@
 /* Tailwind */
 @layer components {
   body {
-    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* background-color: black; */
+    background-color: #f9fafb;
     @apply selection:font-bold
     selection:text-white
     selection:bg-sky-400;
@@ -30,5 +35,26 @@
 
   b {
     font-weight: 500;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  img {
+    width: 40%;
+  }
+  
+  h2 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 10vw;
+    text-shadow: -0.04em 0.04em 0 #000,
+            0.04em 0.04em 0 #000,
+           0.04em -0.04em 0 #000,
+          -0.04em -0.04em 0 #000;
   }
 }
