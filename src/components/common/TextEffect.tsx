@@ -12,16 +12,16 @@ const TextEffect = ({
   color2 = "#00F"
 }: TextEffectProps) => {
   return (
-    <div>
+    <div className='relative bg-red-500'>
       <h1 
         className='absolute font-bold'
-        style={{color: `${color1}`}}
+        style={{color: `${color2}`}}
       >
         {text}
       </h1>
       <h1 
-        className='ml-[-0.4rem] font-bold select-none'
-        style={{color: `${color2}`}}
+        className='absolute ml-[-0.4rem] font-bold select-none'
+        style={{color: `${color1}`}}
       >
         {text}
       </h1>

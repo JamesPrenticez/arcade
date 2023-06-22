@@ -1,10 +1,10 @@
-import ParallaxMtCook from "./components/Parallax/ParallaxMtCook"
+import Home from "./pages/Home"
 
 const App = () => {
 
   return (
     <>
-      <ParallaxMtCook />
+      <Home />
     </>
   )
 }

@@ -1,15 +1,38 @@
-import Player from "../components/Character/Player"
+import React from "react";
+import { Reveal } from "../components/Animate/Reaveal";
+import Section from "../components/Layout/Section";
+import Rainbow from "../components/Lines/Rainbow";
+import Hero from "../components/Hero";
+import Carousel from "../components/Carousel/Carousel";
 
-const Home = () => {
-
+export default function Home() {
   return (
-    <>    
-    <h1 className="font-semibold text-5xl p-4 text-red-600">Game</h1>
-    {/*Zone-Container*/}
-    <Player skin={"f2"} />
-    <h1 className="font-semibold text-xl p-4 text-black">Left | Right | Up | Down Arrow Keys to move </h1>
-  </>
+    <>
+      <Section id={1}>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            height: "100vh"
+          }}
+        >
+            <Rainbow />
+          <Reveal>
+            <h1>James</h1>
+          </Reveal>
+
+        </div>
+      </Section>
+
+      <Section id={2}>
+          {/* <Hero /> */}
+        {/* <Reveal>
+        </Reveal> */}
+      </Section>
+
+      <Section id={3}>
+        <Carousel />
+      </Section>
+    </>
   )
 }
-
-export default Home
